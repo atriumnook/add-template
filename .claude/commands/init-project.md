@@ -11,13 +11,21 @@
      - アーキテクチャ方針（例: クリーンアーキテクチャ、レイヤードアーキテクチャ、モジュラモノリス）
    - `{{PLACEHOLDER}}` を実際の値に置き換える
 
-2. **プロジェクトタイプに応じてテンプレートを取捨選択する**
+2. **README.md を書き換える**
+   - README.md 末尾の「初期化後の README テンプレート」コードブロックの中身で README.md 全体を差し替える
+   - 手順1で確定した `{{PROJECT_NAME}}`, `{{PROJECT_SUMMARY}}` を反映する
+   - ユーザーに以下を確認する:
+     - セットアップ手順（リポジトリの clone から起動までの手順）
+     - 開発コマンド（ビルド・テスト・lint の実行コマンド）
+   - `{{SETUP_STEPS}}`, `{{DEV_COMMANDS}}` を実際の内容に置き換える
+
+3. **プロジェクトタイプに応じてテンプレートを取捨選択する**
    - API のみ（フロントエンドなし）: `docs/specs/_TEMPLATE-ui.md` を削除
    - フロントエンドのみ（API なし）: `docs/specs/_TEMPLATE-api.md` を削除
    - REST 以外の通信方式: `docs/specs/_TEMPLATE-api.md` をプロジェクトに合わせて再構成
    - ドメインモデルを使わない場合: `docs/specs/_TEMPLATE-domain-model.md` を削除
 
-3. **docs/project.md を記入する**
+4. **docs/project.md を記入する**
    - ユーザーに以下を確認する:
      - プロダクトのビジョン
      - 対象ユーザーと課題
@@ -25,32 +33,33 @@
      - 主要なドメイン用語
    - プレースホルダーを実際の値に置き換える
 
-4. **.claude/rules/coding-style.md を設定する**
+5. **.claude/rules/coding-style.md を設定する**
    - 技術スタックに合わせてコメント内の例を実際のルールに置き換える
    - 言語固有ルール・ディレクトリ構成・インポート順序を記入する
 
-5. **docs/qa/ の基本方針を設定する**
+6. **docs/qa/ の基本方針を設定する**
    - test-strategy.md: カバレッジ目標を記入（必須）
    - performance-criteria.md, e2e-guidelines.md, test-data-management.md: ゼロイチ期はプレースホルダーのまま可。必要になった時点で記入する
 
-6. **不要なテンプレートコメントを削除する**
+7. **不要なテンプレートコメントを削除する**
    - 記入済みの `<!-- 例: ... -->` コメントブロックを削除する
    - フロントマターやインラインの `(例: ...)` 表記を削除する
    - 未記入のガイドコメント `<!-- ... -->` はそのまま残す（次回編集時の参考になる）
 
-7. **.claude/rules/git-workflow.md を確認する**
+8. **.claude/rules/git-workflow.md を確認する**
    - チケットIDの形式を確認する（例: `PROJ-` → プロジェクトの Issue Tracker に合わせる）
    - マージ戦略がプロジェクトに適合しているか確認する
 
-8. **.claude/rules/document-workflow.md を確認する**
+9. **.claude/rules/document-workflow.md を確認する**
    - ドキュメントワークフローの絶対ルールがプロジェクトに適合しているか確認する
 
-9. **プレースホルダーの残留を検証する**
-   - `grep -rn '{{' docs/ CLAUDE.md .claude/rules/` を実行
+10. **プレースホルダーの残留を検証する**
+   - `grep -rn '{{' README.md docs/ CLAUDE.md .claude/rules/` を実行
    - 意図的に残したプレースホルダー以外が残っていないことを確認
 
 ## 完了条件
 
+- [ ] README.md のプレースホルダーが埋められている
 - [ ] CLAUDE.md に `{{PLACEHOLDER}}` が残っていない
 - [ ] プロジェクトに不要なテンプレートファイルが削除されている
 - [ ] docs/project.md のビジョン・ユーザー・制約が記入されている

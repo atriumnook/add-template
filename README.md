@@ -88,3 +88,26 @@ AIに渡す情報を3層に分け、コンテキストウィンドウを効率�
 | test-approach        | テスト戦略の適用、受け入れ基準→テストケース変換          | /implement, /review          |
 | consistency-check    | requirements→specs→code→test の一貫性検証                | /review, /implement          |
 
+## 初期化後の README テンプレート
+
+`/init-project` 実行時に、この README.md は以下の内容に差し替えられる:
+
+```markdown
+# {{PROJECT_NAME}}
+
+{{PROJECT_SUMMARY}}
+
+## セットアップ
+
+{{SETUP_STEPS}}
+
+## 開発
+
+{{DEV_COMMANDS}}
+
+## ドキュメント
+
+- [プロダクト基礎情報](docs/project.md)
+- [開発フロー](docs/guides/02-development-flow.md)
+- [ディレクトリ構成と設計思想](docs/guides/01-structure.md)
+```
