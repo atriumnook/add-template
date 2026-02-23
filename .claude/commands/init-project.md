@@ -41,21 +41,26 @@
    - test-strategy.md: カバレッジ目標を記入（必須）
    - performance-criteria.md, e2e-guidelines.md, test-data-management.md: ゼロイチ期はプレースホルダーのまま可。必要になった時点で記入する
 
-7. **不要なテンプレートコメントを削除する**
+7. **docs/state.md を初期化する**
+   - テンプレートの frontmatter の日付を今日の日付に設定する
+   - 「現在の作業」セクションのマイルストーンを「未設定」のままにする
+   - 初回マイルストーンの作成は /create-milestone で行う
+
+8. **不要なテンプレートコメントを削除する**
    - 記入済みの `<!-- 例: ... -->` コメントブロックを削除する
    - フロントマターやインラインの `(例: ...)` 表記を削除する
    - 未記入のガイドコメント `<!-- ... -->` はそのまま残す（次回編集時の参考になる）
 
-8. **.claude/rules/git-workflow.md を確認する**
+9. **.claude/rules/git-workflow.md を確認する**
    - チケットIDの形式を確認する（例: `PROJ-` → プロジェクトの Issue Tracker に合わせる）
    - マージ戦略がプロジェクトに適合しているか確認する
 
-9. **.claude/rules/document-workflow.md を確認する**
-   - ドキュメントワークフローの絶対ルールがプロジェクトに適合しているか確認する
+10. **.claude/rules/document-workflow.md を確認する**
+    - ドキュメントワークフローの絶対ルールがプロジェクトに適合しているか確認する
 
-10. **プレースホルダーの残留を検証する**
-   - `grep -rn '{{' README.md docs/ CLAUDE.md .claude/rules/` を実行
-   - 意図的に残したプレースホルダー以外が残っていないことを確認
+11. **プレースホルダーの残留を検証する**
+    - `grep -rn '{{' README.md docs/ CLAUDE.md .claude/rules/` を実行
+    - 意図的に残したプレースホルダー以外が残っていないことを確認
 
 ## 完了条件
 
@@ -65,6 +70,8 @@
 - [ ] docs/project.md のビジョン・ユーザー・制約が記入されている
 - [ ] .claude/rules/coding-style.md が技術スタックに合わせて設定されている
 - [ ] docs/qa/test-strategy.md のカバレッジ目標が設定されている
+- [ ] docs/state.md が初期化されている
+- [ ] docs/milestones/ ディレクトリが存在する
 - [ ] 記入済みファイルのテンプレートコメント・例示が削除されている
 - [ ] .claude/rules/git-workflow.md のチケットID形式・マージ戦略が確認されている
 - [ ] プレースホルダー残留検証が完了している

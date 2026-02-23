@@ -24,12 +24,13 @@
 
 新しいタスクに着手する際、以下の順序で情報を取得すること:
 
-1. 対象チケットの要件ファイルを読む: `docs/requirements/{{TICKET_ID}}*.md`
-2. 関連ドメインの仕様概要を読む: `docs/specs/{{domain-name}}/overview.md`
-3. overview.md の「コンテキスト（AI向け）」セクションに列挙されたファイルを読む
-4. 関連する ADR がある場合は読む: `docs/adr/`
+1. プロジェクト状態を確認する: `docs/state.md` を読み、現在のマイルストーン・作業位置・ブロッカー・引き継ぎ事項を把握する
+2. 対象チケットの要件ファイルを読む: `docs/requirements/{{TICKET_ID}}*.md`
+3. 関連ドメインの仕様概要を読む: `docs/specs/{{domain-name}}/overview.md`
+4. overview.md の「コンテキスト（AI向け）」セクションに列挙されたファイルを読む
+5. 関連する ADR がある場合は読む: `docs/adr/`
 
-バグ修正の場合は Step 2 から開始する（要件ファイルが存在しない場合がある）。
+バグ修正の場合は Step 3 から開始する（要件ファイルが存在しない場合がある）。
 各コマンド（/implement 等）にはより詳細な前提確認手順がある。
 
 ## ドキュメント管理
@@ -37,6 +38,8 @@
 docs/ 配下でドキュメントを管理する。詳細は [.claude/rules/document-workflow.md](.claude/rules/document-workflow.md) を参照。
 
 - docs/project.md: プロダクト基礎情報（ビジョン・対象ユーザー・事業制約・用語集）
+- docs/state.md: プロジェクト状態（ワーキング情報、現在の作業位置と引き継ぎ）
+- docs/milestones/: マイルストーン（ストック情報、リリース単位の計画と進捗）
 - docs/requirements/: 要件定義（フロー情報、時系列で増え続ける）
 - docs/specs/: 統合仕様（ストック情報、常に最新を反映）
 - docs/adr/: 技術判断記録（追記専用）

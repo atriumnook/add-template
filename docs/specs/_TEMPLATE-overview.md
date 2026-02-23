@@ -80,3 +80,23 @@ status: draft # draft / active / deprecated
 - docs/specs/{{domain-name}}/domain-model.md（ドメインロジック実装時）
 - docs/specs/{{domain-name}}/ui.md（フロントエンド実装時）
 - docs/adr/{{関連ADR}}（技術判断の背景確認が必要な場合）
+
+## 変更履歴
+
+<!--
+feature ブランチ上で specs を変更する際に記入する。
+main マージ後にこのセクションの内容を削除し、specs 本体が「現在の状態」のみを反映するようにする。
+変更がない場合はセクションごと空のままにしておく。
+-->
+
+### ADDED
+
+<!-- 追加された要件・機能 -->
+
+### MODIFIED
+
+<!-- 変更された要件・機能（変更前→変更後を明示） -->
+
+### REMOVED
+
+<!-- 削除された要件・機能（理由を明示） -->

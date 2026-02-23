@@ -2,6 +2,7 @@
 ticket: "{{TICKET_ID}}"
 domain: "{{DOMAIN}}"
 status: draft # draft / approved / implemented / cancelled / deferred
+scope: full # lite / full（段階的厳密さ。判定基準は /create-requirement を参照）
 depends_on: [] # 前提となる要件のチケットID（例: ["PROJ-100", "PROJ-101"]）
 related_specs: [] # /create-spec 後にパスを追加する（例: ["docs/specs/{{domain-name}}/overview.md"]）
 priority: medium # high / medium / low（チケット管理ツール側で管理する場合は省略可）
@@ -21,6 +22,12 @@ updated: "{{YYYY-MM-DD}}" # 初回は created と同じ日付。内容変更の�
 - ドメイン分割後: docs/requirements/{{domain}}/ 配下
 
 目安: 約300行。超える場合は分割を検討する。
+-->
+
+<!--
+scope の判定基準:
+- lite: 単一ドメインの軽微な変更、バグ修正。背景・受け入れ基準・影響範囲のみ記入
+- full: 複数ドメイン、API変更、セキュリティ影響、新規ドメイン。全セクションを記入
 -->
 
 ## 背景と目的

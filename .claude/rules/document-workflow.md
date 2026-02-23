@@ -8,6 +8,7 @@
 - ADR 起因の仕様変更も requirements を経由する
 - コードだけの PR を作成しない（ドキュメントを含めること）
 - 例外: hotfix ブランチの緊急対応は /implement の緊急対応フローに従う（事後にドキュメントを作成）
+- 例外: scope が lite かつ specs への影響がない軽微な修正（バグ修正、設定変更等）は requirements なしで実装可能。ただし docs/state.md に作業内容を記録すること
 
 ## ドキュメントの種類
 
@@ -15,7 +16,9 @@
 |---|---|---|---|
 | フロー情報 | docs/requirements/ | 時系列の記録 | 「いつ・なぜ決めたか」。チケットごとに増え続ける |
 | ストック情報 | docs/specs/ | 現時点の統合仕様 | 「今どうなっているか」。常に最新を反映 |
+| ストック情報 | docs/milestones/ | リリース計画と進捗 | マイルストーン単位の計画・チケット一覧・完了条件 |
 | 技術判断記録 | docs/adr/ | 追記専用 | 一度書いたら変更しない。判断を覆す場合は新規作成 |
+| ワーキング情報 | docs/state.md | 現在の作業状態 | 作業位置・判断ログ・セッション履歴。常に最新を反映 |
 
 ```text
 requirements（フロー） → 集約・再構成 → specs（ストック）
@@ -50,6 +53,14 @@ requirements（フロー） → 集約・再構成 → specs（ストック）
 - accepted: 承認済み（実施する）
 - rejected: 却下（実施しない）
 - superseded: 新しい ADR で代替された
+
+## milestones のステータス遷移
+
+- planning → active → completed → archived
+- planning: マイルストーンの計画中（チケット割り当て・スコープ調整中）
+- active: 開発進行中（チケットの実装が進んでいる）
+- completed: 全完了条件を満たした
+- archived: 振り返り完了後にアーカイブ
 
 ## ワークフロー違反のリカバリ
 

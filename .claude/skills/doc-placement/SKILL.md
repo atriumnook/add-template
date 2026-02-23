@@ -16,6 +16,8 @@ commands: ["/create-requirement", "/create-spec", "/create-adr"]
 | 特定機能に閉じた技術判断 | requirements 内の「技術判断」セクション | 機能に紐づく判断 |
 | テストの方針・基準 | docs/qa/ | 方針のみ。コードは tests/ |
 | プロダクトのビジョン・用語 | docs/project.md | 上位の前提情報 |
+| リリース計画・進捗 | docs/milestones/ | ストック情報（リリース単位の計画） |
+| 現在の作業状態 | docs/state.md | ワーキング情報（揮発性の作業状態） |
 | コーディング規約 | .claude/rules/coding-style.md | AI向け技術ルール |
 | ドメイン固有のルール | 該当ディレクトリの .claude.md | スコープ限定 |
 

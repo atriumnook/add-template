@@ -35,6 +35,24 @@ requirements → 集約・再構成 → specs
 
 仕様を変更する際は、必ず requirements に経緯を記録してから specs を更新する。
 
+### ワーキング情報（state.md）
+
+「今何をしているか」の作業状態記録。プロジェクトに1ファイルのみ存在する。
+
+- 現在の作業位置（マイルストーン・チケット・フェーズ）
+- ブロッカーと判断ログ
+- セッション間の引き継ぎ情報
+
+フローでもストックでもない「揮発性の状態」を管理する。セッションが変わるたびに最新化される。
+
+### マイルストーン（milestones/）
+
+リリース単位の計画と進捗追跡。スコープ・チケット一覧・完了条件を管理する。
+
+- requirements の status と連動して進捗を可視化
+- 完了条件のチェックリストで完了判定
+- 振り返りセクションで学びを蓄積
+
 ### ドキュメント間の関係
 
 ```mermaid
@@ -46,6 +64,8 @@ graph TD
     CODE -->|検証| TEST
     PROJECT[project.md<br/>基礎情報] -.->|ビジョン・用語| REQ
     PROJECT -.->|用語| SPECS
+    MS[milestones<br/>リリース計画] -->|チケット割当| REQ
+    STATE[state.md<br/>作業状態] -.->|現在位置| MS
 ```
 
 - 実線: データの流れ（依存関係）
@@ -57,6 +77,8 @@ graph TD
 ```text
 docs/
 ├── project.md         ← プロダクト基礎情報（ビジョン・制約）
+├── state.md           ← ワーキング情報（現在の作業状態）
+├── milestones/        ← ストック情報（リリース計画と進捗）
 ├── requirements/      ← フロー情報
 ├── specs/             ← ストック情報
 ├── adr/               ← 技術判断の意思決定記録
@@ -103,7 +125,7 @@ CLAUDE.md にはプロジェクト全体に共通する最小限の情報のみ�
 
 プロジェクトが大規模化し、1つのタスクで読むべきファイルが多い場合の優先度:
 
-1. **必須**: CLAUDE.md + .claude/rules/ + 対象 requirements + 対象 specs/overview.md
+1. **必須**: CLAUDE.md + .claude/rules/ + docs/state.md + 対象 requirements + 対象 specs/overview.md
 2. **高**: 対象 specs の api.md / domain-model.md + 関連 ADR
 3. **中**: 他ドメインの overview.md（クロスドメイン参照がある場合）
 4. **低**: docs/qa/ + docs/guides/（方針確認が必要な場合のみ）
