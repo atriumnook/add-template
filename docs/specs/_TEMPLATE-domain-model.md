@@ -50,8 +50,8 @@ erDiagram
 
 | BR-ID | 不変条件          | 出典          |
 | ----- | ----------------- | ------------- |
-| BR-1  | {{INVARIANT_1}}   | {{TICKET_ID}} |
-| BR-2  | {{INVARIANT_2}}   | {{TICKET_ID}} |
+| BR-1  | {{INVARIANT_1}}   | {{TASK_ID}} |
+| BR-2  | {{INVARIANT_2}}   | {{TASK_ID}} |
 
 ## ステータス遷移
 

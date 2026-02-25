@@ -25,23 +25,33 @@ completed_date:
 
 - {{明示的に除外するもの}}
 
-## チケット一覧
+## タスク一覧
 
-| チケットID | 要件ファイル | ドメイン | ステータス | 優先度 | scope |
-|---|---|---|---|---|---|
-| {{TICKET_ID}} | docs/requirements/{{file}} | {{domain}} | draft | high | lite |
+| タスクID | 概要 | ドメイン | ステータス | scope |
+|---|---|---|---|---|
+| {{TASK_ID}} | {{1行で何をするか}} | {{domain}} | draft | lite |
 
 <!--
 ステータスは requirements の status と同期する（draft / approved / implemented）
 scope は requirements の scope と同期する（lite / full）
+タスクの並び順 = 優先度（上が高い）
+requirements 作成後は概要欄にリンクを追記:
+  例: ユーザー登録 ([要件](../requirements/PROJ-001-user-signup.md))
 -->
 
 ## 完了条件
 
-- [ ] 全チケットの requirements が implemented
+- [ ] 全タスクの requirements が implemented
 - [ ] 全 specs が active
 - [ ] CI/CD が通っている
 - [ ] {{追加の完了条件}}
+
+## スコープ変更ログ
+
+<!-- マイルストーン進行中にタスクの追加・削除・優先度変更があった場合に記録する -->
+
+| 日付 | 変更内容 | 理由 |
+|---|---|---|
 
 ## 検証
 
@@ -49,7 +59,7 @@ scope は requirements の scope と同期する（lite / full）
 
 ### 完全性（Completeness）
 
-- 全チケット implemented: 0/0
+- 全タスク implemented: 0/0
 - 全 specs active: 0/0
 
 ### 正確性（Correctness）

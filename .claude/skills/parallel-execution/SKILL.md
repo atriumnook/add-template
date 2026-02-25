@@ -1,6 +1,6 @@
 ---
 name: parallel-execution
-description: 独立タスクの並列実行判断基準。/implement で複数タスクを効率的に実行したいとき、/review で4層チェックを並列化したいときに使用する。
+description: 独立タスクの並列実行判断基準。/implement で複数タスクを効率的に実行したいとき、/review で Layer 1〜4 チェックを並列化したいときに使用する。
 commands: ["/implement", "/review"]
 ---
 
@@ -37,7 +37,7 @@ commands: ["/implement", "/review"]
 
 ### パターン3: レビュー並列化
 
-**使用場面**: /review で4層の一貫性チェックを実行するとき
+**使用場面**: /review で Layer 1〜4 の一貫性チェックを実行するとき
 
 - Layer 1（requirements→specs）と Layer 2（specs→code）は独立して検証可能
 - Layer 3（code→test）は Layer 2 の結果に依存するため、Layer 2 の後に実行する

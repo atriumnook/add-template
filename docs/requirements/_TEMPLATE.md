@@ -1,21 +1,21 @@
 ---
-ticket: "{{TICKET_ID}}"
+task: "{{TASK_ID}}"
 domain: "{{DOMAIN}}"
 status: draft # draft / approved / implemented / cancelled / deferred
 scope: full # lite / full（段階的厳密さ。判定基準は /create-requirement を参照）
-depends_on: [] # 前提となる要件のチケットID（例: ["PROJ-100", "PROJ-101"]）
+depends_on: [] # 前提となる要件のタスクID（例: ["PROJ-100", "PROJ-101"]）
 related_specs: [] # /create-spec 後にパスを追加する（例: ["docs/specs/{{domain-name}}/overview.md"]）
-priority: medium # high / medium / low（チケット管理ツール側で管理する場合は省略可）
+priority: medium # high / medium / low（タスク管理ツール側で管理する場合は省略可）
 created: "{{YYYY-MM-DD}}"
 updated: "{{YYYY-MM-DD}}" # 初回は created と同じ日付。内容変更のたびに更新する
 ---
 
-# {{TICKET_ID}}: {{機能名}}
+# {{TASK_ID}}: {{機能名}}
 
 <!--
 ファイル名規約:
-- チケットIDあり: {{TICKET_ID}}-{{feature-name}}.md (例: PROJ-142-invitation.md)
-- チケットIDなし: {{YYYYMMDD}}-{{feature-name}}.md (例: 20260215-invitation.md)
+- タスクIDあり: {{TASK_ID}}-{{feature-name}}.md (例: PROJ-142-invitation.md)
+- タスクIDなし: {{YYYYMMDD}}-{{feature-name}}.md (例: 20260215-invitation.md)
 
 配置場所:
 - ゼロイチ期: docs/requirements/ 直下

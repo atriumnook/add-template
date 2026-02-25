@@ -28,7 +28,7 @@ status: draft # draft / active / deprecated
 
 | ID   | ルール   | 出典          |
 | ---- | -------- | ------------- |
-| BR-1 | {{RULE}} | {{TICKET_ID}} |
+| BR-1 | {{RULE}} | {{TASK_ID}} |
 
 ## 画面・機能一覧
 
@@ -42,9 +42,9 @@ status: draft # draft / active / deprecated
 
 <!-- このドメインに関連する requirements ファイルの一覧。最新のステータスは各 requirements ファイル本体を参照すること -->
 
-| チケット      | 機能名           | パス                       |
+| タスク        | 機能名           | パス                       |
 | ------------- | ---------------- | -------------------------- |
-| {{TICKET_ID}} | {{FEATURE_NAME}} | docs/requirements/{{path}} |
+| {{TASK_ID}} | {{FEATURE_NAME}} | docs/requirements/{{path}} |
 
 ## 関連するADR
 

@@ -2,6 +2,12 @@
 
 プルリクエストの品質を確認する。PR 作成前のセルフレビュー、または他者の PR レビューの両方に使用する。
 
+## PR の作成（未作成の場合）
+
+1. `git status` で全変更がコミット済みか確認する
+2. `git push -u origin {{branch-name}}`
+3. PR を作成する（git-workflow.md の「PR説明文の構成」に従う）
+
 ## 前提確認
 
 1. PR に以下が全て含まれているか確認する
@@ -47,10 +53,12 @@ consistency-check スキルの Layer 2（specs → code）に従って確認す�
 - requirements → specs → コード → テスト の一貫性
 - 新しい用語が追加された場合、docs/project.md の用語集に反映されているか
 - 技術判断がある場合、ADR として記録されているか
+- Approve の場合、対象 requirements の status を `implemented` に変更する
+- 対象 requirements の内容が specs に正しく集約されていることを確認する
 
 ## 関連スキル
 
-- **consistency-check**（手順 1〜4 全体）: 一貫性検証の4層チェック、問題の重大度判定、レビューコメントの書き方
+- **consistency-check**（手順 1〜4 全体）: 一貫性検証の Layer 1〜4 チェック、問題の重大度判定、レビューコメントの書き方
 - **requirements-writing**（手順 1）: 要件の品質判断基準（レビュー観点として参照）
 - **test-approach**（手順 3）: テストの粒度・カバレッジの妥当性判断
 
@@ -60,3 +68,5 @@ consistency-check スキルの Layer 2（specs → code）に従って確認す�
 - [ ] 新しい用語がある場合、docs/project.md の用語集に追加されていることを確認済み
 - [ ] 問題がある場合はコメントで具体的な修正案を提示済み
 - [ ] Approve / Request Changes の判定を実施済み
+- [ ] Approve した場合、対象 requirements の status が `implemented` に更新されている
+- [ ] docs/state.md のセッション履歴が更新されている

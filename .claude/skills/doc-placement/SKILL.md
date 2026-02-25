@@ -39,10 +39,10 @@ commands: ["/create-requirement", "/create-spec", "/create-adr"]
 
 ### requirements/
 
-- チケットIDあり（推奨）: `{{TICKET_ID}}-{{feature-name}}.md`
-- チケットIDなし: `{{YYYYMMDD}}-{{feature-name}}.md`
+- タスクIDあり（推奨）: `{{TASK_ID}}-{{feature-name}}.md`
+- タスクIDなし: `{{YYYYMMDD}}-{{feature-name}}.md`
 
-チケットIDを推奨する理由: Issue Tracker との追跡可能性、番号衝突がない、AIが「PROJ-142 の要件を読んで」で参照可能。
+タスクIDを推奨する理由: Issue Tracker との追跡可能性、番号衝突がない、AIが「PROJ-142 の要件を読んで」で参照可能。
 
 ### specs/
 
@@ -58,7 +58,7 @@ commands: ["/create-requirement", "/create-spec", "/create-adr"]
 
 ### ブランチ名
 
-`feat/PROJ-142-invitation` — 全て小文字、ハイフン区切り、チケットIDを含める。
+`feat/PROJ-142-invitation` — 全て小文字、ハイフン区切り、タスクIDを含める。
 
 ## フロー情報とストック情報
 

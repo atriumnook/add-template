@@ -10,6 +10,7 @@
      - 技術スタック（言語・フレームワーク・DB・ORM・テスト・E2E・CI/CD）
      - アーキテクチャ方針（例: クリーンアーキテクチャ、レイヤードアーキテクチャ、モジュラモノリス）
    - `{{PLACEHOLDER}}` を実際の値に置き換える
+   - 注: `{{TASK_ID}}`, `{{domain-name}}` 等の「作業開始時の確認」セクションのパターンは置き換え対象外（実行時に動的に読み替える）
 
 2. **README.md を書き換える**
    - README.md 末尾の「初期化後の README テンプレート」コードブロックの中身で README.md 全体を差し替える
@@ -52,15 +53,21 @@
    - 未記入のガイドコメント `<!-- ... -->` はそのまま残す（次回編集時の参考になる）
 
 9. **.claude/rules/git-workflow.md を確認する**
-   - チケットIDの形式を確認する（例: `PROJ-` → プロジェクトの Issue Tracker に合わせる）
+   - タスクIDの形式を確認する（例: `PROJ-` → プロジェクトの Issue Tracker に合わせる）
    - マージ戦略がプロジェクトに適合しているか確認する
 
 10. **.claude/rules/document-workflow.md を確認する**
     - ドキュメントワークフローの絶対ルールがプロジェクトに適合しているか確認する
 
-11. **プレースホルダーの残留を検証する**
-    - `grep -rn '{{' README.md docs/ CLAUDE.md .claude/rules/` を実行
+11. **Hook の設定を行う**
+    - ユーザーに lint コマンドとテストコマンドを確認する
+    - `.claude/hooks/config.json` の `lint_command` と `test_command` を設定する
+    - `chmod +x .claude/hooks/*.sh` で実行権限を付与する（テンプレートから clone した場合に権限が失われることがある）
+
+12. **プレースホルダーの残留を検証する**
+    - `grep -rn '{{' README.md docs/ CLAUDE.md .claude/rules/ .claude/commands/` を実行
     - 意図的に残したプレースホルダー以外が残っていないことを確認
+    - `{{LINT_COMMAND}}` `{{TEST_COMMAND}}` が CLAUDE.md と implement.md で置き換えられていることを確認
 
 ## 完了条件
 
@@ -73,6 +80,8 @@
 - [ ] docs/state.md が初期化されている
 - [ ] docs/milestones/ ディレクトリが存在する
 - [ ] 記入済みファイルのテンプレートコメント・例示が削除されている
-- [ ] .claude/rules/git-workflow.md のチケットID形式・マージ戦略が確認されている
+- [ ] .claude/rules/git-workflow.md のタスクID形式・マージ戦略が確認されている
 - [ ] プレースホルダー残留検証が完了している
+- [ ] `.claude/hooks/config.json` の lint/test コマンドが設定されている
+- [ ] `.claude/hooks/*.sh` に実行権限がある
 - [ ] 初回コミットが作成されている

@@ -31,6 +31,8 @@ git init
 /implement           → 実装
 /review              → PRレビュー
 /create-adr          → 技術判断の記録
+/create-milestone    → マイルストーンの作成
+/check-progress      → 進捗確認
 ```
 
 ## ディレクトリ構成
@@ -45,9 +47,12 @@ git init
 │       ├── requirements-writing/ # 良い要件の書き方
 │       ├── spec-design/         # 仕様設計・API設計・ドメインモデリング
 │       ├── test-approach/       # テスト戦略の適用方法
-│       └── consistency-check/   # 一貫性検証基準
+│       ├── consistency-check/   # 一貫性検証基準
+│       └── parallel-execution/  # 並列実行判断基準
 ├── docs/
 │   ├── project.md               # プロダクト基礎情報
+│   ├── state.md                 # プロジェクト状態（作業位置・引き継ぎ）
+│   ├── milestones/              # マイルストーン（リリース計画と進捗）
 │   ├── requirements/            # 要件定義（フロー情報）
 │   ├── specs/                   # 統合仕様（ストック情報）
 │   ├── adr/                     # 技術判断記録
@@ -87,6 +92,7 @@ AIに渡す情報を3層に分け、コンテキストウィンドウを効率�
 | spec-design          | 要件→仕様の構造化、API設計、ドメインモデリング           | /create-spec                 |
 | test-approach        | テスト戦略の適用、受け入れ基準→テストケース変換          | /implement, /review          |
 | consistency-check    | requirements→specs→code→test の一貫性検証                | /review, /implement          |
+| parallel-execution   | 独立タスクの並列実行判断基準                             | /implement, /review          |
 
 ## 初期化後の README テンプレート
 

@@ -15,6 +15,8 @@
 - **テスト**: {{TEST_FRAMEWORK}}
 - **E2E**: {{E2E_FRAMEWORK}}
 - **CI/CD**: {{CI_CD}}
+- **lint**: {{LINT_COMMAND}}
+- **テスト実行**: {{TEST_COMMAND}}
 
 ## アーキテクチャ
 
@@ -25,7 +27,7 @@
 新しいタスクに着手する際、以下の順序で情報を取得すること:
 
 1. プロジェクト状態を確認する: `docs/state.md` を読み、現在のマイルストーン・作業位置・ブロッカー・引き継ぎ事項を把握する
-2. 対象チケットの要件ファイルを読む: `docs/requirements/{{TICKET_ID}}*.md`
+2. 対象タスクの要件ファイルを読む: `docs/requirements/{{TASK_ID}}*.md`
 3. 関連ドメインの仕様概要を読む: `docs/specs/{{domain-name}}/overview.md`
 4. overview.md の「コンテキスト（AI向け）」セクションに列挙されたファイルを読む
 5. 関連する ADR がある場合は読む: `docs/adr/`

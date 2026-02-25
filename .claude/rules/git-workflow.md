@@ -5,11 +5,11 @@
 Conventional Branch をベースに、以下のルールで運用する
 
 - `main`: リリース済み（またはリリース可能な）確定コード・確定仕様
-- `feat/{{TICKET_ID}}-{{name}}`: 機能開発
-- `fix/{{TICKET_ID}}-{{name}}`: バグ修正
-- `hotfix/{{TICKET_ID}}-{{name}}`: 本番障害の緊急修正
-- `docs/{{TICKET_ID}}-{{name}}`: ドキュメント単体の変更
-- `refactor/{{TICKET_ID}}-{{name}}`: リファクタリング（外部動作の変更なし）
+- `feat/{{TASK_ID}}-{{name}}`: 機能開発
+- `fix/{{TASK_ID}}-{{name}}`: バグ修正
+- `hotfix/{{TASK_ID}}-{{name}}`: 本番障害の緊急修正
+- `docs/{{TASK_ID}}-{{name}}`: ドキュメント単体の変更
+- `refactor/{{TASK_ID}}-{{name}}`: リファクタリング（外部動作の変更なし）
 
 ## コミットメッセージ
 
@@ -73,8 +73,8 @@ Conventional Commits をベースに、以下のルールで運用する
 ## 概要
 何をしたか（1〜2文）
 
-## 関連チケット
-{{TICKET_URL}}
+## 関連タスク
+{{TASK_URL}}
 
 ## 変更内容
 - docs/requirements/: 要件の追加・変更
@@ -85,6 +85,14 @@ Conventional Commits をベースに、以下のルールで運用する
 ## レビュー観点
 特に見てほしいポイント
 ```
+
+### WIP コミット
+
+セッション中断時は WIP コミットを使用する:
+`chore({{scope}}): WIP {{作業中の内容}}`
+最終的に squash merge で統合される。
+
+※ WIP コミットはコミットメッセージに `WIP` を含むため、verify-before-commit Hook のテスト/lint チェックが自動的にスキップされる。
 
 ## マージ戦略
 

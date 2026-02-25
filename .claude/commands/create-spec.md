@@ -6,7 +6,7 @@
 
 ## 前提確認
 
-1. 対象の要件定義（`docs/requirements/{{TICKET_ID}}*.md`）が存在すること
+1. 対象の要件定義（`docs/requirements/{{TASK_ID}}*.md`）が存在すること
    - 存在しない場合は先に /create-requirement を実行する
    - **要件が存在しないまま仕様書を作成してはならない**
 2. `docs/specs/{{domain-name}}/` の該当ドメインに既存の仕様書があるか確認する
@@ -29,7 +29,7 @@
    - API のエンドポイント・リクエスト・レスポンスを定義
    - ドメインモデル（エンティティ・値オブジェクト・集約）を定義
 4. overview.md の関連情報セクション（「関連する要件」「関連するADR」「コンテキスト（AI向け）」）を記入する
-   - 「関連する要件」テーブルに対象 requirements のチケットID・機能名・パスを追記
+   - 「関連する要件」テーブルに対象 requirements のタスクID・機能名・パスを追記
    - 「関連するADR」セクションに該当する ADR があれば記入
    - 「コンテキスト（AI向け）」セクションに関連ファイルのパスを記入（/implement 時にAIが参照する）
 5. 対象の requirements ファイルの `related_specs` フロントマターに、作成した specs ファイルのパスを追記する
@@ -52,6 +52,7 @@
 - [ ] 対象 requirements の `related_specs` フロントマターが更新されている
 - [ ] overview.md の「関連する要件」テーブルに対象 requirements が追加されている
 - [ ] 新しい用語が出現した場合、docs/project.md の用語集に追加されている
+- [ ] docs/state.md のセッション履歴が更新されている
 
 ## 関連スキル
 
